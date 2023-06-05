@@ -1,4 +1,4 @@
-module github.com/miguelmota/go-ethereum-hdwallet
+module github.com/mobazha/go-ethereum-hdwallet
 
 go 1.18
 
@@ -32,11 +32,8 @@ require (
 	github.com/supranational/blst v0.3.8-0.20220526154634-513d2456b344 // indirect
 	github.com/thomaso-mirodin/intmath v0.0.0-20160323211736-5dc6d854e46e // indirect
 	golang.org/x/crypto v0.5.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-replace (
-	github.com/btcsuite/btcd => github.com/btcsuite/btcd v0.23.0
-	github.com/ethereum/go-ethereum => github.com/bnb-chain/bsc v1.2.4
-)
+replace github.com/ethereum/go-ethereum => github.com/bnb-chain/bsc v1.2.4
