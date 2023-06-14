@@ -92,6 +92,16 @@ func NewFromSeed(seed []byte) (*Wallet, error) {
 	return newWallet(seed)
 }
 
+func NewFromMasterKey(masterKey *hdkeychain.ExtendedKey) (*Wallet, error) {
+	return &Wallet{
+		masterKey:   masterKey,
+		seed:        []byte{},
+		accounts:    []accounts.Account{},
+		paths:       map[common.Address]accounts.DerivationPath{},
+		fixIssue172: false || len(os.Getenv(issue179FixEnvar)) > 0,
+	}, nil
+}
+
 // URL implements accounts.Wallet, returning the URL of the device that
 // the wallet is on, however this does nothing since this is not a hardware device.
 func (w *Wallet) URL() accounts.URL {
